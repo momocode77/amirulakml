@@ -1,0 +1,159 @@
+
+<html><head>
+    <title>MyResume</title>
+    
+    <link rel="stylesheet"href="style.css"type="text/css"> 
+    
+    </head>
+    <body>
+      <div id="wrapper">
+    
+        <div id="header">
+            <h1>Experience</h1>
+        </div>
+    
+        <div id="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="skill.html">Skill</a></li>
+          <li><a href="activity.html">Activity</a></li>
+          <li><a href="portfolio.html">Past project/Portfolio </a></li>
+          <li><a href="jsproject.html">JS Project </a></li>
+        </ul>
+        </div>
+        
+        <div class="small-container-gen">  
+          <p style="border:2px solid slateblue;">My Video/Audio</p>
+        </div>
+        
+        <div class="row-2">
+          <div class="small-container-vid">
+              <iframe width="420" height="315"
+                  src="https://www.youtube.com/embed/qaUd1Js-Q5g">
+              </iframe>
+            
+
+            <video width="420" height="315" controls>
+              <source src="Video/Myvid.mp4" type="video/mp4">
+              <source src="Video/Myvid.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+            </video>
+
+            <audio controls>
+              <source src="Video/Mymusic.ogg" type="audio/ogg">
+              <source src="Video/Mymusic.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+          </div>
+            
+        </div>
+
+          <div class="small-container-gen">  
+            <p style="border:2px solid slateblue;">Svg Project</p>
+          </div>
+
+           
+            <svg height="130" width="500">
+                <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"
+                    style="stop-color:rgb(45, 138, 226);stop-opacity:1" />
+                    <stop offset="100%"
+                    style="stop-color:rgb(92, 209, 230);stop-opacity:1" />
+                </linearGradient>
+                </defs>
+                <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                <text fill="#ffffff" font-size="45" font-family="Verdana"
+                x="30" y="86">UTEM</text>
+            Sorry, your browser does not support inline SVG.
+            </svg>
+
+              <div class="small-container-gen">  
+                <p style="border:2px solid slateblue;">Canvas Project</p>
+              </div>
+
+              <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+                Your browser does not support the HTML canvas tag.</canvas>
+                
+                <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                
+                // Create gradient
+                var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+                grd.addColorStop(0,"green");
+                grd.addColorStop(1,"white");
+                
+                // Fill with gradient
+                ctx.fillStyle = grd;
+                ctx.fillRect(10,10,150,80);
+             </script>
+
+            <div class="small-container-gen">  
+                <p style="border:2px solid slateblue;">Geolocation</p>
+            </div>
+
+            <p>Click the button to get your coordinates.</p>
+
+            <button onclick="getLocation()">Try It</button>
+
+            <p id="demo"></p>
+
+            <script>
+            var x = document.getElementById("demo");
+
+            function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+            }
+
+            function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude + 
+            "<br>Longitude: " + position.coords.longitude;
+            }
+            </script>
+
+          <div class="small-container-gen">  
+            <p style="border:2px solid slateblue;">Drag and Drop Project</p>
+          </div>
+           
+          
+          <script>
+            function allowDrop(ev) {
+              ev.preventDefault();
+            }
+            
+            function drag(ev) {
+              ev.dataTransfer.setData("text", ev.target.id);
+            }
+            
+            function drop(ev) {
+              ev.preventDefault();
+              var data = ev.dataTransfer.getData("text");
+              ev.target.appendChild(document.getElementById(data));
+            }
+            </script>
+
+          <div class="dragdrop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <br>
+          <img id="dragdrop" src="Photo/utem.png" draggable="true" ondragstart="drag(event)" width="336" height="120">
+
+
+           
+         
+    
+        <div class="footer-edu">
+          <div class="footer-content">
+            <h3></h3>
+          </div>     
+      </div>  
+    
+      </div>
+    </body></html>
+    
